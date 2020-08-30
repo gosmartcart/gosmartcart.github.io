@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Coming Soon</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="tools/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:700,400|Lato' rel='stylesheet' type='text/css'>
+<link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+
+
+</head>
+<body>
+<div class="wrapper"><!--wrapper started-->
+	<div class="abovebanner"><!-- above banner started -->
+			<div class="header"><!-- header started-->
+				<h1 id="logo">smart<span>cart</span></h1>
+				<p class="line1">grocery shopping has a new address</p>
+			</div><!-- header ended-->
+						
+			<div class="content"><!-- content started-->
+					<p>The new way to shop for grocery, want to learn more?</p>
+					
+					<div class="form"><!-- form started -->
+						<div class="mainform">
+							<div class="field"><input type="text" id="test" value="enter your email address"/></div>
+							<div class="submit"><input type="button" value="subscribe here" onclick="sendEmail()"/></div>
+						</div>
+					</div><!-- form ended -->
+			
+			</div><!-- content ended -->
+	</div><!-- above banner ended -->
+</div>
+	
+	
+<script type="text/javascript">
+	var placeholder = $("#test").val();
+
+	$("#test").keydown(function() {
+		if (this.value == placeholder) {
+			this.value = '';
+		}
+	}).blur(function() {
+		if (this.value == '') {
+			this.value = placeholder;
+		}
+	});
+
+	function sendEmail() {
+		Email.send({
+		Host: "smtp.elasticemail.com",
+		Username : "smartcart.charithtangirala@gmail.com",
+		Password : "C4C70776A2FF8C15F2002866446D030B2543",
+		To : 'ctangirala@gmail.com',
+		From : "smartcart.charithtangirala@gmail.com",
+		Subject : "Subscribe me!",
+		Body : "myemail@myemail.com",
+		}).then(
+			//message => alert("mail sent successfully")
+		);
+	}
+</script>
+
+</body>
+</html>

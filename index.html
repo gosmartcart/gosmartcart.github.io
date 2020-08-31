@@ -18,18 +18,19 @@
 	<div class="abovebanner"><!-- above banner started -->
 			<div class="header"><!-- header started-->
 				<h1 id="logo">smart<span>cart</span></h1>
-				<p class="line1">grocery shopping has a new address</p>
+				<p class="line1">online grocery shopping has a new address</p>
 			</div><!-- header ended-->
 
 			<div class="content"><!-- content started-->
 					<p>The new way to shop for grocery, want to learn more?</p>
 					<div>
-						<p id="success" class="success">Thank you for registering!</p>
+						<p id="subscriptionSuccess" class="subscriptionSuccess">Thank you for registering!</p>
+						<p id="invalidEmail" class="invalidEmail">You entered an invalid email address :(</p>
 					</div>
 					<div class="form"><!-- form started -->
 						<div class="mainform">
 							<div class="field"><input type="text" id="emailid" value="enter your email address"/></div>
-							<div class="submit"><input type="button" value="subscribe here" onclick="sendEmail()"/></div>
+							<div class="submit"><input type="button" value="keep me in the loop" onclick="sendEmail()"/></div>
 						</div>
 
 					</div><!-- form ended -->
@@ -37,15 +38,15 @@
 	</div><!-- above banner ended -->
 	<div class="belowbanner">
 		<div class="email">
-			<h2>email us</h2>
-			<p><a href="#">info@smartcart.com</a></p>
+			<h2>partner with us</h2>
+			<p><a href="#">sales@gosmartcart.com</a></p>
 		</div>
 		<div class="social">
 			<img src="images/heart.jpg" alt="heart" width="200" height="200">
 		</div>
 		<div class="call">
-			<h2>call us</h2>
-			<p>888-888-8888</p>
+			<h2>#COMMUNITY</h2>
+			<h2>#FRIENDLYNEIGHBORS</h2>
 		</div>
 	</div>
 </div>
@@ -65,20 +66,33 @@
 	});
 
 	function sendEmail() {
-		Email.send({
-			Host: "smtp.elasticemail.com",
-			Username : "smartcart.charithtangirala@gmail.com",
-			Password : "C4C70776A2FF8C15F2002866446D030B2543",
-			To : 'charith@gosmartcart.com',
-			From : "charith@gosmartcart.com",
-			Subject : "Subscribe me!",
-			Body : document.getElementById("emailid").value,
-		}).then(
-			message => {
-				var x = document.getElementById("success");
-				x.style.display = "block";
-			}
-		);
+		if (emailIsValid(document.getElementById("emailid").value)) {
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username : "smartcart.charithtangirala@gmail.com",
+				Password : "C4C70776A2FF8C15F2002866446D030B2543",
+				To : 'captjamesj@gmail.com',
+				From : "charith@gosmartcart.com",
+				Subject : "SMARTCART BETA CUSTOMER",
+				Body : document.getElementById("emailid").value,
+			}).then(
+				message => {
+					var subscriptionSuccess = document.getElementById("subscriptionSuccess");
+					var invalidEmail = document.getElementById("invalidEmail");
+
+					invalidEmail.style.display = "none";
+					subscriptionSuccess.style.display = "block";
+				}
+			);
+		} else {
+			var invalidEmail = document.getElementById("invalidEmail");
+			invalidEmail.style.display = "block";
+		}
+
+	}
+
+	function emailIsValid (email) {
+	  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 	}
 </script>
 

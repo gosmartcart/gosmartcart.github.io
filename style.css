@@ -81,6 +81,20 @@ p.line1{
 	letter-spacing: 1px;
 }
 
+.subscriptionSuccess{
+    color: #a7e09f;
+    padding-top: 2%;
+    font-size: 18px !important;
+    display: none;
+}
+
+.invalidEmail{
+    color: #ed374a;
+    padding-top: 2%;
+    font-size: 18px !important;
+    display: none;
+}
+
 .form{
 	width: 40%;
 	padding: 0 30%;
@@ -132,12 +146,66 @@ p.line1{
 	background: #fff;
 }
 
+.belowbanner{
+	margin-top: 40px;
+	width: 100%;
+	float: left;
+}
+
 h2{
 	font-size: 12px;
 	color: #433022;
 	letter-spacing: 2px;
 	margin-bottom: 10px;
 }
+
+.email{
+	width: 32%;
+	float: left;
+	border-right: 1px solid #d3d1cf;
+
+}
+
+.email a{
+	color: #433022;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+email a:hover{
+	text-decoration: underline;
+}
+
+.social{
+	width: 32%;
+	float: left;
+}
+
+
+.social a{
+	margin: 0 15px;
+	color: #433022;
+	text-decoration: none;
+}
+
+.social a:hover{
+	opacity: 0.7;
+}
+
+.call{
+	width: 34%;
+	float: left;
+	border-left: 1px solid #d3d1cf;
+}
+
+.call p{
+	color: #433022;
+	font-weight: 700;
+	font-size: 14px;
+}
+
 
 @media only screen and (max-width: 1024px){
     .abovebanner{
@@ -197,6 +265,10 @@ h2{
         letter-spacing: 1px;
     }
 
+    .subscriptionSuccess{
+        font-size: 18px !important;
+    }
+
     .form{
         width: 80%;
         padding: 0 10%;
@@ -245,8 +317,29 @@ h2{
         border-radius: 2px;
     }
 
-    h2{
-        display: none;
+
+
+    .email, .social, .call{
+    	width: 80%;
+    	margin: 0 10%;
+    	padding: 20px 0;
+    	float: left;
+    	border-right: none;
+    	border-left: none;
+
+    }
+
+    .email, .social{
+    		border-bottom: 1px solid #f4f4f3;
+
+    }
+
+
+    .belowbanner{
+    	margin-top: 20px;
+    }
+
+
     }
 }
 

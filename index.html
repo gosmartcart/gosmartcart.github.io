@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Coming Soon</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="tools/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Merriweather:700,400|Lato' rel='stylesheet' type='text/css'>
@@ -20,19 +20,34 @@
 				<h1 id="logo">smart<span>cart</span></h1>
 				<p class="line1">grocery shopping has a new address</p>
 			</div><!-- header ended-->
-						
+
 			<div class="content"><!-- content started-->
 					<p>The new way to shop for grocery, want to learn more?</p>
-					
+					<div>
+						<p id="success" class="success">Thank you for registering!</p>
+					</div>
 					<div class="form"><!-- form started -->
 						<div class="mainform">
-							<div class="field"><input type="text" id="test" value="enter your email address"/></div>
+							<div class="field"><input type="text" id="emailid" value="enter your email address"/></div>
 							<div class="submit"><input type="button" value="subscribe here" onclick="sendEmail()"/></div>
 						</div>
+
 					</div><!-- form ended -->
-			
 			</div><!-- content ended -->
 	</div><!-- above banner ended -->
+	<div class="belowbanner">
+		<div class="email">
+			<h2>email us</h2>
+			<p><a href="#">info@smartcart.com</a></p>
+		</div>
+		<div class="social">
+			<img src="images/heart.jpg" alt="heart" width="200" height="200">
+		</div>
+		<div class="call">
+			<h2>call us</h2>
+			<p>888-888-8888</p>
+		</div>
+	</div>
 </div>
 	
 	
@@ -51,15 +66,18 @@
 
 	function sendEmail() {
 		Email.send({
-		Host: "smtp.elasticemail.com",
-		Username : "smartcart.charithtangirala@gmail.com",
-		Password : "C4C70776A2FF8C15F2002866446D030B2543",
-		To : 'ctangirala@gmail.com',
-		From : "smartcart.charithtangirala@gmail.com",
-		Subject : "Subscribe me!",
-		Body : "myemail@myemail.com",
+			Host: "smtp.elasticemail.com",
+			Username : "smartcart.charithtangirala@gmail.com",
+			Password : "C4C70776A2FF8C15F2002866446D030B2543",
+			To : 'charith@gosmartcart.com',
+			From : "charith@gosmartcart.com",
+			Subject : "Subscribe me!",
+			Body : document.getElementById("emailid").value,
 		}).then(
-			//message => alert("mail sent successfully")
+			message => {
+				var x = document.getElementById("success");
+				x.style.display = "block";
+			}
 		);
 	}
 </script>

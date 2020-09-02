@@ -14,6 +14,27 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
     text-transform: initial;
 }
 
+.field input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+.field input:focus::-moz-placeholder { /* Firefox 19+ */
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+.field input:focus:-ms-input-placeholder { /* IE 10+ */
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+.field input:focus:-moz-placeholder { /* Firefox 18- */
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
 html,
 body {
     margin: 0;
@@ -113,7 +134,7 @@ p.line1{
 
 .field input{
 	width: 58%;
-	font-family: 'Merriweather', serif;	
+	font-family: 'Merriweather', serif;
 	float: left;
 	background: none;
 	border: none;
@@ -132,14 +153,14 @@ p.line1{
 	border: none;
 	font-family: 'Merriweather', serif;
 	text-transform: uppercase;
-	letter-spacing: 2px;	
+	letter-spacing: 2px;
 	padding: 10px 0;
 	margin: 6px 1%;
 	font-size: 12px;
 	cursor: pointer;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	border-radius: 2px;		
+	border-radius: 2px;
 }
 
 .submit:hover input{

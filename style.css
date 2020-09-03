@@ -14,6 +14,19 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
     text-transform: initial;
 }
 
+.field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #fff;
+}
+.field input::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+}
+.field input::-ms-input-placeholder { /* IE 10+ */
+    color: #fff;
+}
+.field input::-moz-placeholder { /* Firefox 18- */
+    color: #fff;
+}
+
 .field input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: transparent;
     -webkit-transition: color 0.2s ease;
